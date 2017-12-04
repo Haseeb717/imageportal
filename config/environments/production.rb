@@ -49,6 +49,20 @@ Rails.application.configure do
   # Prepend all log lines with the following tags.
   config.log_tags = [ :request_id ]
 
+  config.action_mailer.default_url_options = { :host => 'collectimages.herokuapp.com' }
+  config.action_mailer.delivery_method = :smtp
+  # SMTP settings for gmail
+  config.action_mailer.smtp_settings = {
+   :address              => "smtp.sendgrid.net",
+   :port                 => 587,
+   :domain              => 'heroku.com',
+   :user_name            => ENV['SENDGRID_USERNAME'],
+   :password             => ENV['SENDGRID_PASSWORD'],
+   :authentication       => "plain",
+   :enable_starttls_auto => true
+  }
+
+
   # Use a different cache store in production.
   # config.cache_store = :mem_cache_store
 
