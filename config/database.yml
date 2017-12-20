@@ -16,3 +16,7 @@ default: &default
 development:
   <<: *default
   database: image_development
+
+production:
+  <<: *default
+  database: image_production

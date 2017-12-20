@@ -10,63 +10,64 @@
 
   <body>
 	  <!-- Header -->
-	  <nav class="navbar navbar-default mynav">
-	     <div class="container">
-	        <!-- Brand and toggle get grouped for better mobile display -->
-	        <div class="navbar-header">
-	          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-	            <span class="sr-only">Toggle navigation</span>
-	            <span class="icon-bar top-bar"></span>
-	            <span class="icon-bar middle-bar"></span>
-	            <span class="icon-bar bottom-bar"></span>
-	          </button>
-	          <%= link_to "UI Collect",root_path,:class=>"wow fadeInDown logotext" %>
-	           
-	        </div>
-	        <!-- Collect the nav links, forms, and other content for toggling -->
-	        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-	          <ul class="nav navbar-nav navbar-right wow fadeInDown">
-	              <% if user_signed_in? %>
-	              	<li>
-                    <%= link_to "Create Image", new_item_path,:class=>"btn btn-success registerNow hvr-sink" %>
+	  
+
+	  <div class="navbar navbar-default navbar-static-top mynav">
+         <div class="container">
+            <div class="navbar-header">
+               <div class="navbar-brand"><%= link_to "uiarchive",root_path %></div>
+               <button class="navbar-toggle" data-toggle="collapse" data-target=".btnCollapse">
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+               </button>
+            </div>
+            <div class="collapse navbar-collapse btnCollapse">
+               <ul class="nav navbar-nav">
+                  <li class="dropdown ">
+                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Filter <span class="caret"></span></a>
+                     <ul class="dropdown-menu">
+                        <li><a href="#">Landing Page</a></li>
+                        <li><a href="#">Dashboard</a></li>
+                        <li><a href="#">Onboarding</a></li>
+                     </ul>
                   </li>
-                  <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-home fa-2x"></i> <span class="fa fa-angle-down"></span></a>
-                    <ul class="dropdown-menu">
-                      <li><%= link_to 'Edit profile', edit_user_registration_path %></li>
-                      <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
-                    </ul>
-                  </li>
-                <% else %>
-                  <li><%= link_to "Login", new_user_session_path %></li>
-                  <li><%= link_to "Signup", new_user_registration_path %></li>
-                <% end %>
-	          </ul>
-	        </div>
-	        <!-- /.navbar-collapse -->
-	     </div>
-	     <!-- /.container-fluid -->
-	  </nav>
+               </ul>
+               <ul class="nav navbar-nav navbar-right">
+               		<% if user_signed_in? %>
+                    <li><%= link_to 'Create Item', new_item_path %></li>
+                    <li><%= link_to 'Edit profile', edit_user_registration_path %></li>
+                    <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+               		<% else %>
+	                  <li><%= link_to "Login", new_user_session_path %></li>
+                  	<li><%= link_to "Signup", new_user_registration_path %></li>
+                  <% end %>
+               </ul>
+               <form class="navbar-form navbar-right" role="search">
+                  <div id="imaginary_container" class="wow fadeInDown">
+                     <div class="input-group stylish-input-group">
+                        <input type="text" class="form-control"  placeholder="Search All" >
+                        <span class="input-group-addon">
+                        <button type="submit">
+                        <span class="glyphicon glyphicon-search"></span>
+                        </button>  
+                        </span>
+                     </div>
+                  </div>
+               </form>
+            </div>
+         </div>
+         <!-- end container -->
+    </div>
 	  <!-- Header -->
 	  
 		<%= yield %>
 
-		<div class="footer-bottom">
-	    <div class="container">
-	        <div class="row">
-	           <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 wow fadeInDown">
-	              <div class="copyright">
-	                 &copy; 2017, UI Collect, All rights reserved
-	              </div>
-	           </div>
-	           <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 wow fadeInDown">
-	              <div class="design">
-	                 <a href="#">Facebook </a> |  <a  href="">Twitter</a> |  <a  href="">Youtube</a>
-	              </div>
-	           </div>
-	        </div>
-	    </div>
-	  </div>
+		<div class="copyrights wow fadeInDown">
+      <div class="text-center">
+          <p>All Rights Reserved | Copyright 2017 © uiarchive</p>
+      </div>
+    </div>
 
 	  <script type="text/javascript">
 	     new WOW().init();	
