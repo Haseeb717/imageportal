@@ -36,6 +36,7 @@
                 <%= f.text_area :description, :class=>"form-control",:placeholder=>"Description",:required=>true,:rows=>"5" %>
               </div>
             </div>
+            <%= f.hidden_field :user_id,:value=>current_user.id %>
             
             <div class="form-group">
               <div class="pull-right">

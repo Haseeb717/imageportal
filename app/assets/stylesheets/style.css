@@ -412,6 +412,7 @@ body {
     color: #fff;
     font-weight: bold;
 }
+.post-img-content img{ height: 196px;max-width: 100%; }
 /*********** Media ************/
 
 @media only screen and (max-width: 767px) {

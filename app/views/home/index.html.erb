@@ -21,109 +21,25 @@
       </div>
       <div class="clearfix"></div>
       <div class="row">
-         <div class="col-sm-4 col-md-4">
-            <div class="post">
-               <div class="post-img-content">
-                  <!-- -->
-                  <span class="post-title"><b>+</b></span>
-               </div>
-               <div class="content">
-                  <div>
-                     <a href="">Landing page by designer name </a>
-                  </div>
-               </div>
-            </div>
-         </div>
-         <div class="col-sm-4 col-md-4">
-            <div class="post">
-               <div class="post-img-content">
-               </div>
-               <div class="content">
-                  <div>
-                     <a href=""> Dashboard by designer name </a>
-                  </div>
-               </div>
-            </div>
-         </div>
-         <div class="col-sm-4 col-md-4">
-            <div class="post">
-               <div class="post-img-content">
-               </div>
-            </div>
-         </div>
+        <% @items.each do |item| %>
+          <div class="col-sm-4 col-md-4">
+              <div class="post">
+                <div class="post-img-content">
+                    <%= image_tag item.image_url %>
+                    <span class="post-title"><b>+</b></span>
+                </div>
+                <div class="content">
+                    <div>
+                      <%= link_to item.title,item %>
+                    </div>
+                </div>
+              </div>
+          </div>
+        <% end %>
+        
+        
       </div>
-      <!-- row -->
-      <div class="row">
-         <div class="col-sm-4 col-md-4">
-            <div class="post">
-               <div class="post-img-content">
-               </div>
-               <div class="content">
-                  <div>
-                     <a href=""> Onboarding by designer name </a>
-                  </div>
-               </div>
-            </div>
-         </div>
-         <div class="col-sm-4 col-md-4">
-            <div class="post">
-               <div class="post-img-content">
-               </div>
-               <div class="content">
-                  <div>
-                     <a href=""> Signup page by designer name </a>
-                  </div>
-               </div>
-            </div>
-         </div>
-         <div class="col-sm-4 col-md-4">
-            <div class="post">
-               <div class="post-img-content">
-               </div>
-               <div class="content">
-                  <div>
-                     <a href=""> Notification by designer name </a>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-      <!-- row -->
-      <div class="row">
-         <div class="col-sm-4 col-md-4">
-            <div class="post">
-               <div class="post-img-content">
-               </div>
-               <div class="content">
-                  <div>
-                     <a href=""> Dropdown by designer name </a>
-                  </div>
-               </div>
-            </div>
-         </div>
-         <div class="col-sm-4 col-md-4">
-            <div class="post">
-               <div class="post-img-content">
-               </div>
-               <div class="content">
-                  <div>
-                     <a href=""> Statistics by designer name </a>
-                  </div>
-               </div>
-            </div>
-         </div>
-         <div class="col-sm-4 col-md-4">
-            <div class="post">
-               <div class="post-img-content">
-               </div>
-               <div class="content">
-                  <div>
-                     <a href=""> Image Slider by designer name </a>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
+      
       <!-- row -->
       <div class="custom-pagination text-center ">
          <ul class="pagination pagination-large">
