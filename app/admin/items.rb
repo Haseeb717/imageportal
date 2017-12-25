@@ -32,8 +32,9 @@ ActiveAdmin.register Item do
     	link_to(n.user.first_name, admin_user_path(n.user_id))
   	end
   	column "Category" do |n|
-      	link_to(n.category.title, admin_category_path(n.category_id))
-    	end
+    	link_to(n.category.title, admin_category_path(n.category_id))
+  	end
+    column :status
     actions
   end
 
